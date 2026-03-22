@@ -56,6 +56,7 @@ module.exports = async function handler(req, res) {
 
       return res.status(200).json({
         status:      'ok',
+        creator: "Suhas-Bro-2026",
         query:       query || year || genre,
         page:        parseInt(page || '1', 10),
         total_pages: data.total_pages,
@@ -105,16 +106,17 @@ module.exports = async function handler(req, res) {
   // ── Help / index ─────────────────────────────────────────────────────────
   return res.status(200).json({
     service: 'sinhalasub.lk Scraper API v3',
+    creator: "Suhas-Bro-2026",
     endpoints: {
-      'GET /api?s=<keyword>':                         'Search movies by title',
+      'GET /api?s=keyword':                         'Search movies by title',
       'GET /api?s=2024':                              'Browse movies by year',
-      'GET /api?s=<keyword>&year=2024':               'Search + filter by year',
-      'GET /api?s=<keyword>&page=2':                  'Paginate results',
+      'GET /api?s=keyword&year=2024':               'Search + filter by year',
+      'GET /api?s=keyword&page=2':                  'Paginate results',
       'GET /api?genre=action':                        'Browse by genre',
-      'GET /api?url=<movie_url>':                     'Scrape movie details',
-      'GET /api?url=<movie_url>&resolve=true':        'Scrape + real download URLs',
-      'GET /api?url=<movie_url>&resolve=true&pixeldrain=true': 'Pixeldrain links only',
-      'GET /api/resolve?url=<sinhalasub_links_url>':  'Resolve single redirect',
+      'GET /api?url=movie_url':                     'Scrape movie details',
+      'GET /api?url=movie_url&resolve=true':        'Scrape + real download URLs',
+      'GET /api?url=movie_url&resolve=true&pixeldrain=true': 'Pixeldrain links only',
+      'GET /api/resolve?url=sinhalasub_links_url':  'Resolve single redirect',
     },
     examples: [
       '/api?s=honey',
