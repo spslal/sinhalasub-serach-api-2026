@@ -57,6 +57,7 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).json({
       status:      'ok',
+      creator: "Suhas-Bro-2026",
       query:       query || year || genre,
       page:        parseInt(page || '1', 10),
       total_pages: data.total_pages,
